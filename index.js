@@ -99,10 +99,11 @@ Square.prototype.constructor = Rectangle
 
 Square.prototype.listProperties = function () {
   let properties = []
-  for (var prop in this) {
-    if(this.hasOwnProperty(prop)) {
+  let square = new Square(1)
+  for (var prop in square) {
+    if (square.hasOwnProperty(prop)) {
       properties.push(prop)
     }
   }
-  return properties
+  return properties.join(', ')
 }
