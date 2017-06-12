@@ -98,5 +98,11 @@ Square.prototype = Object.create(Rectangle.prototype)
 Square.prototype.constructor = Rectangle
 
 Square.prototype.listProperties = function () {
-  return this.hasOwnProperties
+  let properties = []
+  for (var prop in this) {
+    if(this.hasOwnProperty(prop)) {
+      properties.push(prop)
+    }
+  }
+  return properties
 }
